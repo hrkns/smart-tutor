@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
-import { TopicsComponent } from './topics/topics.component';
+import { TopicsRoutes } from './topics/routes';
 
-const routes: Routes = [
-  { path: 'topics', component: TopicsComponent },
-];
+const routes: Routes = TopicsRoutes;
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [Title],
 })
 export class AppRoutingModule { }

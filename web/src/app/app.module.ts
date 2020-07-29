@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopicsComponent } from './topics/topics.component';
+import { NewComponent } from './topics/new/new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopicsComponent
+    TopicsComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,

@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-topics',
-  templateUrl: './topics.component.html',
-  styleUrls: ['./topics.component.scss']
+  selector: 'app-new',
+  templateUrl: './new.component.html',
+  styleUrls: ['./new.component.scss']
 })
-export class TopicsComponent implements OnInit {
+export class NewComponent implements OnInit {
 
   public constructor(private titleService: Title ) {
 
-    this.titleService.setTitle( 'Topics' );
+    this.titleService.setTitle( 'Create Topic' );
   }
 
   ngOnInit(): void {
   }
+
 }
