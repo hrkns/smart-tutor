@@ -2,6 +2,7 @@
   "name": "web",
   "version": "0.0.0",
   "scripts": {
+    "install": "npm install --no-optional",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -25,6 +26,7 @@
     "ngx-quill": "^12.0.1",
     "node-sass": "^4.0.0",
     "quill": "^1.3.7",
+    "request": "^2.88.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
