@@ -8,12 +8,14 @@ import { TopicsComponent } from './components/topics/topics.component';
 import { NewComponent } from './components/topics/new/new.component';
 
 import { QuillModule } from 'ngx-quill';
+import { FileValueAccesorDirective } from 'src/app/directives/file-value-accesor.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopicsComponent,
     NewComponent,
+    FileValueAccesorDirective,
   ],
   imports: [
     BrowserModule,
