@@ -14,6 +14,7 @@ export class NewComponent implements OnInit {
     title : new FormControl(''),
     description : new FormControl(''),
     content : new FormControl(''),
+    files : new FormControl(''),
   });
 
   public constructor(private titleService: Title ) {

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
-import { TopicsRoutes } from './topics/routes';
+import { TopicsRoutes } from './components/topics/routes';
 
 const routes: Routes = TopicsRoutes;
 

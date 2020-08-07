@@ -23,8 +23,11 @@
     <quill-editor formControlName="content"></quill-editor>
   </label>
 
-  <p>Files:</p>
-  <!-- multiple files input-->
+  <label>
+    Files:
+    <br>
+    <input type='file' formControlName="files" multiple="true">
+  </label>
 
   <p>Child Topics:</p>
   <!-- custom input (multiple combo?) for selecting child topics, allowing to ordering them-->

@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TopicsComponent } from './topics/topics.component';
-import { NewComponent } from './topics/new/new.component';
+import { AppComponent } from './components/app.component';
+import { TopicsComponent } from './components/topics/topics.component';
+import { NewComponent } from './components/topics/new/new.component';
 
 import { QuillModule } from 'ngx-quill';
 
@@ -13,7 +13,7 @@ import { QuillModule } from 'ngx-quill';
   declarations: [
     AppComponent,
     TopicsComponent,
-    NewComponent
+    NewComponent,
   ],
   imports: [
     BrowserModule,
