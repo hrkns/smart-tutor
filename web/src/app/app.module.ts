@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { TopicsComponent } from './topics/topics.component';
 import { NewComponent } from './topics/new/new.component';
 
+import { QuillModule } from 'ngx-quill';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,8 @@ import { NewComponent } from './topics/new/new.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    QuillModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
