@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
+import { LoggerService } from 'src/app/services/logger.service';
 
 @Component({
   selector: 'app-new',
@@ -14,12 +15,14 @@ export class NewComponent implements OnInit {
     title : new FormControl(''),
     description : new FormControl(''),
     content : new FormControl(''),
-    files : new FormControl(),
+    files : new FormControl([]),
+    children : new FormControl([]),
   });
 
   public constructor(
     private titleService: Title,
-    private API: ApiService
+    private API: ApiService,
+    private logger: LoggerService,
   ) {
 
     this.titleService.setTitle( 'Create Topic' );
@@ -29,15 +32,15 @@ export class NewComponent implements OnInit {
 
     this.API.getTopics().subscribe(result => {
 
-      console.log('Success requestin topics', result);
+      this.logger.success('Success requesting topics.', result);
     }, error => {
 
-      console.log('Error requesting topics', error);
+      this.logger.error('Error requesting topics.', error);
     });
   }
 
   public submitNewtopic(): void {
 
-    console.log('Submitting a new topic', this.newTopicForm);
+    this.logger.info('Submitting a new topic...', this.newTopicForm.value);
   }
 }
