@@ -42,14 +42,14 @@ module.exports = {
         ],
     "@angular-eslint/contextual-lifecycle": "error",
     "@angular-eslint/directive-class-suffix": "error",
-    "@angular-eslint/directive-selector": [
-            "error",
-      {
-        "type": "attribute",
-        "prefix": "app",
-        "style": "camelCase"
-            }
-        ],
+    // "@angular-eslint/directive-selector": [
+    //         "error",
+    //   {
+    //     "type": "attribute",
+    //     "prefix": "app",
+    //     "style": "camelCase"
+    //         }
+    //     ],
     "@angular-eslint/no-conflicting-lifecycle": "error",
     "@angular-eslint/no-host-metadata-property": "error",
     "@angular-eslint/no-input-rename": "error",

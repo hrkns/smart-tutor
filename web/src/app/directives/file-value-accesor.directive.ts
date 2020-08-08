@@ -24,7 +24,7 @@ export class FileValueAccesorDirective implements ControlValueAccessor {
 
   constructor(private element: ElementRef, private render: Renderer2) {}
 
-  @HostListener('change', ['$event.target.files']) _handleInput(event: Array < File > ): void {
+  @HostListener('change', ['$event.target.files']) handleInput(event: Array < File > ): void {
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     this.onChange(event);
@@ -44,7 +44,7 @@ export class FileValueAccesorDirective implements ControlValueAccessor {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  registerOnTouched(_fn: () => void): void {}
+  registerOnTouched(fn: () => void): void {}
 
   nOnDestroy(): void {}
 }

@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run lint & ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "full_lint": "eslint ./src/**/*.ts --ignore-pattern **/*.spec.ts",
     "e2e": "ng e2e"
   },
   "private": true,
