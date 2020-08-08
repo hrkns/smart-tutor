@@ -4,7 +4,9 @@ import {
 import {
   mongoConnectionUrl
 } from '../utils';
-import Configuration from '../configuration';
+import {
+  Configuration
+} from '../configuration';
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
@@ -20,7 +22,7 @@ mongoose.connect(mongoConnectionUrl(Configuration.Mongo), {
 
 async function getTopics(parameters?: any) {
 
-  const a = await TopicModel.find({}).exec();
+  const a = await TopicModel.find({}, {title:1}).exec();
   return a;
 };
 
