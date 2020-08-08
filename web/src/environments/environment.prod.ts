@@ -1,3 +1,3 @@
-export const Environment = {
+export const ENVIRONMENT = {
   production: true
 };

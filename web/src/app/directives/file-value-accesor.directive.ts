@@ -22,25 +22,29 @@ export class FileValueAccesorDirective implements ControlValueAccessor {
 
   onChange: any;
 
-  @HostListener('change', ['$event.target.files']) _handleInput(event) {
+  constructor(private element: ElementRef, private render: Renderer2) {}
 
+  @HostListener('change', ['$event.target.files']) _handleInput(event: Array < File > ): void {
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     this.onChange(event);
   }
 
-  constructor(private element: ElementRef, private render: Renderer2) {}
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  writeValue(value: any): void {
 
-  writeValue(value: any) {
-
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const normalizedValue = value == null ? '' : value;
     this.render.setProperty(this.element.nativeElement, 'value', normalizedValue);
   }
 
-  registerOnChange(fn) {
+  registerOnChange(fn: () => void): void {
 
     this.onChange = fn;
   }
 
-  registerOnTouched(fn): void {}
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  registerOnTouched(_fn: () => void): void {}
 
-  nOnDestroy() {}
+  nOnDestroy(): void {}
 }

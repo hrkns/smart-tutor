@@ -13,22 +13,22 @@ export class LoggerService {
 
   constructor(private logger: NGXLogger) {}
 
-  public info(...messages): void {
+  public info(...messages: any[]): void {
 
     messages.forEach(s => this.logger.log(s));
   }
 
-  public success(...messages): void {
+  public success(...messages: any[]): void {
 
     messages.forEach(s => this.logger.info(s));
   }
 
-  public warning(...messages): void {
+  public warning(...messages: any[]): void {
 
     messages.forEach(s => this.logger.warn(s));
   }
 
-  public error(...messages): void {
+  public error(...messages: any[]): void {
 
     messages.forEach(s => this.logger.error(s));
   }

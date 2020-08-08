@@ -1,7 +1,17 @@
-import { TopicsComponent } from './topics.component';
-import { NewComponent } from './new/new.component';
+import {
+  TopicsComponent
+} from './topics.component';
+import {
+  NewComponent
+} from './new/new.component';
 
 export const TopicsRoutes = [
-  { path : 'topics', component : TopicsComponent},
-  { path : 'topics/new', component : NewComponent},
+  {
+    path: 'topics',
+    component: TopicsComponent
+  },
+  {
+    path: 'topics/new',
+    component: NewComponent
+  },
 ];

@@ -21,6 +21,7 @@ import {
   templateUrl: './new.component.html',
   styleUrls: ['./new.component.scss']
 })
+
 export class NewComponent implements OnInit {
 
   public newTopicForm = new FormGroup({
@@ -42,13 +43,14 @@ export class NewComponent implements OnInit {
 
   public ngOnInit(): void {
 
-    this.API.getTopics().subscribe(result => {
+    this.API.getTopics()
+      .subscribe(result => {
 
-      this.logger.success('Success requesting topics.', result);
-    }, error => {
+        this.logger.success('Success requesting topics.', result);
+      }, error => {
 
-      this.logger.error('Error requesting topics.', error);
-    });
+        this.logger.error('Error requesting topics.', error);
+      });
   }
 
   public submitNewtopic(): void {

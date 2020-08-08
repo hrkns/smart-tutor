@@ -1,6 +1,10 @@
-import { TestBed } from '@angular/core/testing';
+import {
+  TestBed
+} from '@angular/core/testing';
 
-import { LoggerService } from './logger.service';
+import {
+  LoggerService
+} from './logger.service';
 
 describe('LoggerService', () => {
   let service: LoggerService;
@@ -11,6 +15,7 @@ describe('LoggerService', () => {
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(service)
+      .toBeTruthy();
   });
 });
