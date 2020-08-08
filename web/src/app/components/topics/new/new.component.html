@@ -1,0 +1,38 @@
+<form [formGroup]="newTopicForm" (ngSubmit)="submitNewtopic()">
+  <h1>Create Topic:</h1>
+
+  <label>
+    Title:
+    <br>
+    <input type='text' formControlName="title">
+  </label>
+
+  <br><br>
+
+  <label>
+    Description:
+    <br>
+    <textarea formControlName="description"></textarea>
+  </label>
+
+  <br><br>
+
+  <label>
+    Content:
+    <br>
+    <quill-editor formControlName="content"></quill-editor>
+  </label>
+
+  <br>
+
+  <label>
+    Files:
+    <br>
+    <input type='file' formControlName="files" multiple="true">
+  </label>
+
+  <p>Child Topics:</p>
+  <!-- custom input (multiple combo?) for selecting child topics, allowing to ordering them-->
+
+  <input type='submit' value='Save'>
+</form>

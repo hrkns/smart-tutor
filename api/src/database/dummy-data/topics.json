@@ -1,0 +1,26 @@
+[
+  {
+    "_id" : 1,
+    "name" : "topic1",
+    "description" : "description-a",
+    "content" : "content-X",
+    "files" : [],
+    "children": []
+  },
+  {
+    "_id" : 2,
+    "name" : "topic2",
+    "description" : "description-b",
+    "content" : "content-Y",
+    "files" : [],
+    "children": []
+  },
+  {
+    "_id" : 3,
+    "name" : "topic3",
+    "description" : "description-c",
+    "content" : "content-Z",
+    "files" : [],
+    "children": [1, 2]
+  }
+]
