@@ -1,5 +1,5 @@
 import express = require('express');
-import { Configuration } from './configuration';
+import { HostConfiguration } from './configuration';
 import SetRoutes from './routes';
 import {
   logger
@@ -9,7 +9,7 @@ const app: express.Application = express();
 
 SetRoutes(app);
 
-app.listen(Configuration.Host.Port, function () {
+app.listen(HostConfiguration.Port, function () {
 
-  logger.info('App is listening on port 3000!');
+  logger.info(`App is listening on port ${HostConfiguration.Port}!`);
 });
