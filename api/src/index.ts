@@ -5,8 +5,10 @@ import {
   logger
 } from './logging';
 
+const cors = require('cors');
 const app: express.Application = express();
 
+app.use(cors());
 SetRoutes(app);
 
 app.listen(HostConfiguration.Port, function () {
