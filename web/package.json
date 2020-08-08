@@ -22,6 +22,7 @@
     "@angular/router": "^10.0.0",
     "fibers": "^5.0.0",
     "html-webpack-plugin": "^4.0.0-alpha.2",
+    "ng-file-upload": "^12.2.13",
     "ngx-quill": "^12.0.1",
     "node-sass": "^4.0.0",
     "quill": "^1.3.7",
@@ -35,8 +36,8 @@
     "@angular-eslint/eslint-plugin": "0.0.1-alpha.32",
     "@angular-eslint/eslint-plugin-template": "0.0.1-alpha.32",
     "@angular/cli": "^10.0.5",
-    "@angular/compiler-cli": "~9.1.1",
-    "@angular/language-service": "~9.1.1",
+    "@angular/compiler-cli": "^10.0.8",
+    "@angular/language-service": "^10.0.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
@@ -58,6 +59,6 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "^3.9.2"
   }
 }

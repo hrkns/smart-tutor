@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { QuillModule } from 'ngx-quill';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -14,6 +13,7 @@ export class NewComponent implements OnInit {
     title : new FormControl(''),
     description : new FormControl(''),
     content : new FormControl(''),
+    files : new FormControl(),
   });
 
   public constructor(private titleService: Title ) {
@@ -24,8 +24,8 @@ export class NewComponent implements OnInit {
   public ngOnInit(): void {
   }
 
-  public submitNewtopic() {
+  public submitNewtopic(): void {
 
-    console.log('this.newTopicForm.value', this.newTopicForm.value);
+    console.log('this.newTopicForm', this.newTopicForm);
   }
 }

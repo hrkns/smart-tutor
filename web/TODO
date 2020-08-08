@@ -1,0 +1,67 @@
+npm WARN deprecated tslint@6.1.2: TSLint has been deprecated in favor of ESLint. Please see https://github.com/palantir/tslint/issues/4534 for more information.
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated fsevents@1.2.13: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
+
+> fibers@5.0.0 install C:\workspace\smart-tutor\web\node_modules\fibers
+> node build.js || nodejs build.js
+
+
+C:\workspace\smart-tutor\web\node_modules\fibers>if not defined npm_config_node_gyp (node "C:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin\\..\..\node_modules\node-gyp\bin\node-gyp.js" rebuild --release )  else (node "C:\Program Files\nodejs\node_modules\npm\node_modules\node-gyp\bin\node-gyp.js" rebuild --release )
+Los proyectos de esta solución se van a compilar de uno en uno. Para habilitar la compilación en paralelo, agregue el modificador "/m".
+  fibers.cc
+  coroutine.cc
+  win_delay_load_hook.cc
+c:\workspace\smart-tutor\web\node_modules\fibers\src\coroutine.cc(153): warning C4552: "!": el resultado de la expresión no se usa [C:\workspace\smart-tutor\web\node_modules\fibers\build\fibe
+rs.vcxproj]
+  coro.c
+     Creando biblioteca C:\workspace\smart-tutor\web\node_modules\fibers\build\Release\fibers.lib y objeto C:\workspace\smart-tutor\web\node_modules\fibers\build\Release\fibers.exp
+  Generando c¾digo
+  All 753 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Generaci¾n de c¾digo finalizada
+  fibers.vcxproj -> C:\workspace\smart-tutor\web\node_modules\fibers\build\Release\\fibers.node
+Installed in `C:\workspace\smart-tutor\web\node_modules\fibers\bin\win32-x64-64\fibers.node`
+
+> node-sass@4.14.1 install C:\workspace\smart-tutor\web\node_modules\node-sass
+> node scripts/install.js
+
+Cached binary found at C:\Users\José\AppData\Roaming\npm-cache\node-sass\4.14.1\win32-x64-64_binding.node
+
+> core-js@3.6.4 postinstall C:\workspace\smart-tutor\web\node_modules\core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!
+
+The project needs your help! Please consider supporting of core-js on Open Collective or Patreon:
+> https://opencollective.com/core-js
+> https://www.patreon.com/zloirock
+
+Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)
+
+
+> @angular/cli@10.0.5 postinstall C:\workspace\smart-tutor\web\node_modules\@angular\cli
+> node ./bin/postinstall/script.js
+
+
+> node-sass@4.14.1 postinstall C:\workspace\smart-tutor\web\node_modules\node-sass
+> node scripts/build.js
+
+Binary found at C:\workspace\smart-tutor\web\node_modules\node-sass\vendor\win32-x64-64\binding.node
+Testing binary
+Binary is fine
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.1.2 (node_modules\rollup\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules\watchpack-chokidar2\node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules\webpack-dev-server\node_modules\chokidar\node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.13: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+npm WARN @angular-devkit/build-angular@0.901.12 requires a peer of @angular/compiler-cli@>=9.0.0 < 10 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular-devkit/build-angular@0.901.12 requires a peer of typescript@>=3.6 < 3.9 but none is installed. You must install peer dependencies yourself.
+npm WARN codelyzer@5.2.2 requires a peer of @angular/compiler@>=2.3.1 <10.0.0 || >9.0.0-beta <10.0.0 || >9.1.0-beta <10.0.0 || >9.2.0-beta <10.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN codelyzer@5.2.2 requires a peer of @angular/core@>=2.3.1 <10.0.0 || >9.0.0-beta <10.0.0 || >9.1.0-beta <10.0.0 || >9.2.0-beta <10.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngtools/webpack@9.1.12 requires a peer of @angular/compiler-cli@>=9.0.0 < 10 but none is installed. You must install peer dependencies yourself.
+npm WARN @ngtools/webpack@9.1.12 requires a peer of typescript@>=3.6 < 3.9 but none is installed. You must install peer dependencies yourself.
+
+added 1754 packages from 1212 contributors and audited 1760 packages in 529.307s
+found 2 low severity vulnerabilities
+  run `npm audit fix` to fix them, or `npm audit` for details

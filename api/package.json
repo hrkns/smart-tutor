@@ -5,13 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "compile": "tsc && node ./dist/index.js",
+    "dev": "nodemon -e ts --exec \"npm run compile\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.7",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "typescript": "^3.9.7"
+    "mongoose": "^5.9.28",
+    "typescript": "^3.9.7",
+    "winston": "^3.3.3"
   }
 }
