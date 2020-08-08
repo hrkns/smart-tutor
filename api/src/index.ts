@@ -1,14 +1,10 @@
 import express = require('express');
-import Configuration from './config';
-
-console.log(Configuration);
+import Configuration from './configuration';
+import SetRoutes from './routes';
 
 const app: express.Application = express();
 
-app.get('/', function (req, res) {
-
-  res.send('Hello World!');
-});
+SetRoutes(app);
 
 app.listen(Configuration.Host.Port, function () {
 
