@@ -11,7 +11,7 @@ import {
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Models = {
-  Topic : new Schema(TopicModelSchema),
+  Topic: new Schema(TopicModelSchema),
 }
 const TopicModel = mongoose.model('topics', Models.Topic);
 
@@ -20,9 +20,12 @@ mongoose.connect(mongoConnectionUrl(Configuration.Mongo), {
   useUnifiedTopology: true,
 });
 
-async function getTopics(parameters?: any) {
+async function getTopics(parameters ? : any) {
 
-  const a = await TopicModel.find({}, {title:1}).exec();
+  const a = await TopicModel.find({}, {
+      title: 1
+    })
+    .exec();
   return a;
 };
 

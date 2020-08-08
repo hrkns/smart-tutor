@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment';
-import { Environments } from '../utils/environments.utils';
-import { NGXLogger } from 'ngx-logger';
+import {
+  Injectable
+} from '@angular/core';
+import {
+  NGXLogger
+} from 'ngx-logger';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ import { NGXLogger } from 'ngx-logger';
 
 export class LoggerService {
 
-  constructor(private logger: NGXLogger) { }
+  constructor(private logger: NGXLogger) {}
 
   public info(...messages): void {
 

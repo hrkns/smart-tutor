@@ -5,7 +5,7 @@ import {
   getTopics
 } from '../../controllers/topics';
 
-const setTopicRoutes = function(app: any){
+const setTopicRoutes = function(app: any) {
 
   app.get(`${apiUrlPrefix}topics`, getTopics);
 };

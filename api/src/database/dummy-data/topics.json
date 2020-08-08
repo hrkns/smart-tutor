@@ -1,26 +1,26 @@
 [
   {
-    "_id" : 1,
-    "title" : "topic1",
-    "description" : "description-a",
-    "content" : "content-X",
-    "files" : [],
+    "_id": 1,
+    "title": "topic1",
+    "description": "description-a",
+    "content": "content-X",
+    "files": [],
     "children": []
   },
   {
-    "_id" : 2,
-    "title" : "topic2",
-    "description" : "description-b",
-    "content" : "content-Y",
-    "files" : [],
+    "_id": 2,
+    "title": "topic2",
+    "description": "description-b",
+    "content": "content-Y",
+    "files": [],
     "children": []
   },
   {
-    "_id" : 3,
-    "title" : "topic3",
-    "description" : "description-c",
-    "content" : "content-Z",
-    "files" : [],
+    "_id": 3,
+    "title": "topic3",
+    "description": "description-c",
+    "content": "content-Z",
+    "files": [],
     "children": [1, 2]
   }
 ]

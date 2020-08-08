@@ -1,8 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { FormGroup, FormControl } from '@angular/forms';
-import { ApiService } from 'src/app/services/api.service';
-import { LoggerService } from 'src/app/services/logger.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  Title
+} from '@angular/platform-browser';
+import {
+  FormGroup,
+  FormControl
+} from '@angular/forms';
+import {
+  ApiService
+} from 'src/app/services/api.service';
+import {
+  LoggerService
+} from 'src/app/services/logger.service';
 
 @Component({
   selector: 'app-new',
@@ -12,11 +24,11 @@ import { LoggerService } from 'src/app/services/logger.service';
 export class NewComponent implements OnInit {
 
   public newTopicForm = new FormGroup({
-    title : new FormControl(''),
-    description : new FormControl(''),
-    content : new FormControl(''),
-    files : new FormControl([]),
-    children : new FormControl([]),
+    title: new FormControl(''),
+    description: new FormControl(''),
+    content: new FormControl(''),
+    files: new FormControl([]),
+    children: new FormControl([]),
   });
 
   public constructor(
@@ -25,7 +37,7 @@ export class NewComponent implements OnInit {
     private logger: LoggerService,
   ) {
 
-    this.titleService.setTitle( 'Create Topic' );
+    this.titleService.setTitle('Create Topic');
   }
 
   public ngOnInit(): void {
