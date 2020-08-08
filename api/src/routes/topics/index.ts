@@ -1,10 +1,13 @@
-import * as db from '../../database';
+import {
+  apiUrlPrefix
+} from '../../utils';
+import {
+  getTopics
+} from '../../controllers/topics';
 
-async function getTopics(request: any, response: any) {
+const setTopicRoutes = function(app: any){
 
-  response.json(await db.getTopics());
+  app.get(`${apiUrlPrefix}topics`, getTopics);
 };
 
-export {
-  getTopics
-}
+export default setTopicRoutes;

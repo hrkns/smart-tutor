@@ -1,12 +1,8 @@
-import {
-  getTopics
-} from './topics/';
-
-const urlPrefix = '/';
+import setTopicRoutes from './topics/';
 
 const SetRoutes = (app: any) => {
 
-  app.get(`${urlPrefix}topics`, getTopics);
+  setTopicRoutes(app);
 };
 
 export default SetRoutes;

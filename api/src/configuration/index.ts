@@ -1,5 +1,4 @@
-import dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config();
 
 const _ = process.env;
 

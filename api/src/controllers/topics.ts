@@ -1,4 +1,10 @@
+import * as db from '../database';
 
-export const getTopics = (request: any, response: any) => {
+async function getTopics(request: any, response: any) {
 
+  response.json(await db.getTopics());
 };
+
+export {
+  getTopics,
+}
