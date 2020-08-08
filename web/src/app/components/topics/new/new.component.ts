@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-new',
@@ -16,16 +17,27 @@ export class NewComponent implements OnInit {
     files : new FormControl(),
   });
 
-  public constructor(private titleService: Title ) {
+  public constructor(
+    private titleService: Title,
+    private API: ApiService
+  ) {
 
     this.titleService.setTitle( 'Create Topic' );
   }
 
   public ngOnInit(): void {
+
+    this.API.getTopics().subscribe(result => {
+
+      console.log('Success requestin topics', result);
+    }, error => {
+
+      console.log('Error requesting topics', error);
+    });
   }
 
   public submitNewtopic(): void {
 
-    console.log('this.newTopicForm', this.newTopicForm);
+    console.log('Submitting a new topic', this.newTopicForm);
   }
 }
