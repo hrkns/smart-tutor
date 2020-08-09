@@ -32,17 +32,21 @@ const {
   }),
   logsFilesPath = './logs/',
   logFileExtension = '.log',
-  infoLog = (message: string) => {
-    winstonLogger.debug(message);
+  infoLog = (...messages: any[]) => {
+
+    messages.forEach(message => winstonLogger.debug(JSON.stringify(message)));
   },
-  successLog = (message: string) => {
-    winstonLogger.info(message);
+  successLog = (...messages: any[]) => {
+
+    messages.forEach(message => winstonLogger.info(JSON.stringify(message)));
   },
-  warningLog = (message: string) => {
-    winstonLogger.warning(message);
+  warningLog = (...messages: any[]) => {
+
+    messages.forEach(message => winstonLogger.warning(JSON.stringify(message)));
   },
-  errorLog = (message: string) => {
-    winstonLogger.error(message);
+  errorLog = (...messages: any[]) => {
+
+    messages.forEach(message => winstonLogger.error(JSON.stringify(message)));
   };
 
 let _ = (level: string) => {
