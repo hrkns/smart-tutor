@@ -33,25 +33,15 @@ export class NewComponent implements OnInit {
   });
 
   public constructor(
+    public API: ApiService,
     private titleService: Title,
-    private API: ApiService,
     private logger: LoggerService,
   ) {
 
     this.titleService.setTitle('Create Topic');
   }
 
-  public ngOnInit(): void {
-
-    this.API.getTopics()
-      .subscribe(result => {
-
-        this.logger.success('Success requesting topics.', result);
-      }, error => {
-
-        this.logger.error('Error requesting topics.', error);
-      });
-  }
+  public ngOnInit(): void { }
 
   public submitNewtopic(): void {
 

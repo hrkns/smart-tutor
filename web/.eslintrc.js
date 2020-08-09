@@ -124,6 +124,23 @@ module.exports = {
       "selector": "default",
       "format": ["PascalCase", "camelCase"]
     }],
+    '@angular-eslint/no-outputs-metadata-property': "off",
+    '@angular-eslint/component-class-suffix': "off",
+    '@angular-eslint/contextual-lifecycle': "off",
+    '@angular-eslint/directive-class-suffix': "off",
+    '@angular-eslint/no-conflicting-lifecycle': "off",
+    '@angular-eslint/no-host-metadata-property': "off",
+    '@angular-eslint/no-input-rename': "off",
+    '@angular-eslint/no-inputs-metadata-property': "off",
+    '@angular-eslint/no-output-native': "off",
+    '@angular-eslint/no-output-on-prefix': "off",
+    '@angular-eslint/no-output-rename': "off",
+    '@angular-eslint/component-selector': "off",
+    '@angular-eslint/template/banana-in-box': "off",
+    '@angular-eslint/template/no-negated-async': "off",
+    '@angular-eslint/use-lifecycle-interface': "off",
+    '@angular-eslint/use-pipe-transform-interface': "off",
+
     "@typescript-eslint/no-array-constructor": "error",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "error",
@@ -183,7 +200,7 @@ module.exports = {
         }
             }
         ],
-    "@typescript-eslint/type-annotation-spacing": "error",
+    // "@typescript-eslint/type-annotation-spacing": "error",
     "@typescript-eslint/unbound-method": "error",
     "@typescript-eslint/unified-signatures": "error",
     "arrow-body-style": "error",
@@ -209,11 +226,11 @@ module.exports = {
             "undefined"
         ],
     "id-match": "error",
-    "import/no-deprecated": "warn",
-    "jsdoc/check-alignment": "error",
-    "jsdoc/check-indentation": "error",
-    "jsdoc/newline-after-description": "error",
-    "jsdoc/no-types": "error",
+    // "import/no-deprecated": "warn",
+    // "jsdoc/check-alignment": "error",
+    // "jsdoc/check-indentation": "error",
+    // "jsdoc/newline-after-description": "error",
+    // "jsdoc/no-types": "error",
     "max-classes-per-file": "off",
     "max-len": [
             "error",
@@ -286,7 +303,7 @@ module.exports = {
             "error",
             "never"
         ],
-    "prefer-arrow/prefer-arrow-functions": "error",
+    // "prefer-arrow/prefer-arrow-functions": "error",
     "prefer-const": "error",
     "quote-props": [
             "error",

@@ -13,6 +13,12 @@ import {
 import {
   endpoints
 } from 'src/app/utils/api.utils';
+import {
+  SearchQueryParameters
+} from '../types/search-query-parameters';
+import {
+  LoggerService
+} from '../services/logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +28,34 @@ export class ApiService {
 
   private apiUrl = Environment.apiUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private logger: LoggerService
+  ) {}
 
-  public getTopics(): Observable < any > {
+  public getTopics = (queryParameters ? : SearchQueryParameters): Observable < any > => {
 
-    return this.http.get(`${this.apiUrl}${endpoints.getTopics}`);
+    const url = `${this.apiUrl}${endpoints.getTopics}${this.buildQueryStringFromSearchQueryParameters(queryParameters)}`;
+
+    this.logger.info('Getting topics...', 'HTTP request.', url);
+
+    return this.http.get(url);
+  };
+
+  private buildQueryStringFromSearchQueryParameters(queryParameters ? : SearchQueryParameters): string {
+    const queryString = new Array < string > ();
+
+    if (queryParameters && queryParameters.keywords && queryParameters.keywords.trim()
+      .length) {
+
+      queryString.push(`keywords=${queryParameters.keywords.trim()}`);
+    }
+
+    if (queryParameters && queryParameters.limit > 0) {
+
+      queryString.push(`limit=${queryParameters.limit}`);
+    }
+
+    return (queryString.length ? '?' : '') + queryString.join('&');
   }
 }

@@ -31,8 +31,13 @@
     <input type='file' formControlName="files" multiple="true">
   </label>
 
-  <p>Child Topics:</p>
-  <!-- custom input (multiple combo?) for selecting child topics, allowing to ordering them-->
+  <br><br>
+
+  <app-multiple-select-using-search
+    [apiSource]="API.getTopics"
+  ></app-multiple-select-using-search>
+
+  <br><br>
 
   <input type='submit' value='Save'>
 </form>

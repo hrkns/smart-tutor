@@ -7,7 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "full_lint": "eslint ./src/**/*.ts --ignore-pattern **/*.spec.ts",
+    "full-lint": "eslint ./src/**/*.ts --ignore-pattern **/*.spec.ts",
     "e2e": "ng e2e"
   },
   "private": true,
