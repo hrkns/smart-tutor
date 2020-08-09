@@ -63,7 +63,7 @@ winstonLogger.add(_(LoggingLevels.error));
 
 switch (Environment) {
 
-  case EnviromentsIdentifiers.development: {
+  case EnviromentsIdentifiers.local: {
 
     let _ = (file: string, type ? : string) => {
 

@@ -4,7 +4,9 @@
   <label>
     Title:
     <br>
-    <input type='text' formControlName="title">
+    <input id='title' type='text' formControlName="title" required>
+    &nbsp;
+    <span *ngIf="error('title')">Title required!</span>
   </label>
 
   <br><br>
@@ -40,5 +42,5 @@
 
   <br><br>
 
-  <input type='submit' value='Save'>
+  <input type='submit' value='Save' [disabled]="!newTopicForm.valid">
 </form>

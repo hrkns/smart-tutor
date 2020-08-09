@@ -12,13 +12,14 @@ import {
 } from 'src/environments/environment';
 import {
   endpoints
-} from 'src/app/utils/api.utils';
+} from 'src/app/utils';
 import {
-  SearchQueryParameters
-} from '../types/search-query-parameters';
+  SearchQueryParameters,
+  TopicCreationPayload,
+} from 'src/app/types';
 import {
   LoggerService
-} from '../services/logger.service';
+} from 'src/app/services';
 
 @Injectable({
   providedIn: 'root'
@@ -36,10 +37,17 @@ export class ApiService {
   public getTopics = (queryParameters ? : SearchQueryParameters): Observable < any > => {
 
     const url = `${this.apiUrl}${endpoints.getTopics}${this.buildQueryStringFromSearchQueryParameters(queryParameters)}`;
-
     this.logger.info('Getting topics...', 'HTTP request.', url);
-
     return this.http.get(url);
+  };
+
+  public createTopic = (payload: TopicCreationPayload): Observable < any > => {
+
+    console.log('endpoints', endpoints);
+
+    const url = `${this.apiUrl}${endpoints.createTopic}`;
+    this.logger.info('Creating topic...', 'HTTP request.', url, payload);
+    return this.http.post(url, payload);
   };
 
   private buildQueryStringFromSearchQueryParameters(queryParameters ? : SearchQueryParameters): string {

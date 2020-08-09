@@ -9,20 +9,20 @@ const getTopicsQueryParametersRules: any[] = [
     .isString()
     .trim()
     .isLength({
-    min: 1
-  }),
+      min: 1
+    }),
   query('limit')
     .optional()
     .isInt({
-    min: 1
-  }),
+      min: 1
+    }),
   query('exclude')
     .optional()
     .isString()
     .trim()
     .isLength({
-    min: 1
-  }),
+      min: 1
+    }),
 ];
 
 const _ = (request: any, response: any, next: any) => {

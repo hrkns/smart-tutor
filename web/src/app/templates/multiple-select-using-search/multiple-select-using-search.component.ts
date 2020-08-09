@@ -10,14 +10,14 @@ import {
 } from 'rxjs';
 import {
   LoggerService
-} from '../../services/logger.service';
+} from 'src/app/services';
 import {
   SimpleTopic
-} from '../../types/simple-topic';
+} from 'src/app/types';
 import {
   RemoveElementFromArray,
   MoveElementFromIndexFromArrayToPosition
-} from '../../utils/methods.utils';
+} from 'src/app/utils';
 
 @Component({
   selector: 'app-multiple-select-using-search',
@@ -29,7 +29,7 @@ export class MultipleSelectUsingSearchComponent implements OnInit {
 
   @Input() apiSource: (parameters ? : any) => Observable < any > ;
 
-  @Output() setChildTopics = new EventEmitter<string[]>();
+  @Output() setChildTopics = new EventEmitter < string[] > ();
 
   public inputForSearch = '';
   public topicsSearchResults: SimpleTopic[];
@@ -70,6 +70,7 @@ export class MultipleSelectUsingSearchComponent implements OnInit {
 
     this.selectedTopicsFromSearchResults.push(selectedTopic);
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     this.topicsSearchResults = RemoveElementFromArray(this.topicsSearchResults, (value: SimpleTopic) => value._id === selectedTopic._id);
 
     if (this.topicsSearchResults.length === this.maxAmountOfResults - 1) {
@@ -100,6 +101,7 @@ export class MultipleSelectUsingSearchComponent implements OnInit {
       return;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     this.selectedTopicsFromSearchResults = RemoveElementFromArray(this.selectedTopicsFromSearchResults,
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       (value: SimpleTopic) => value._id === topictoBeRemoved._id);
@@ -111,6 +113,7 @@ export class MultipleSelectUsingSearchComponent implements OnInit {
 
     if (indexOfElement > 0) {
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       this.selectedTopicsFromSearchResults = MoveElementFromIndexFromArrayToPosition(this.selectedTopicsFromSearchResults,
         indexOfElement, indexOfElement - 1);
     }
@@ -120,6 +123,7 @@ export class MultipleSelectUsingSearchComponent implements OnInit {
 
     if (indexOfElement < this.selectedTopicsFromSearchResults.length - 1) {
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       this.selectedTopicsFromSearchResults = MoveElementFromIndexFromArrayToPosition(this.selectedTopicsFromSearchResults,
         indexOfElement, indexOfElement + 1);
     }

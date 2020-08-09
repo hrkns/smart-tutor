@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc && node ./dist/index.js",
-    "dev": "nodemon -e ts --exec \"npm run compile\""
+    "local": "nodemon -e ts --exec \"npm run compile\""
   },
   "author": "",
   "license": "ISC",

@@ -7,14 +7,13 @@ import {
 } from '@angular/platform-browser';
 import {
   FormGroup,
-  FormControl
+  FormControl,
+  Validators
 } from '@angular/forms';
 import {
-  ApiService
-} from 'src/app/services/api.service';
-import {
+  ApiService,
   LoggerService
-} from 'src/app/services/logger.service';
+} from 'src/app/services';
 
 @Component({
   selector: 'app-new',
@@ -25,7 +24,12 @@ import {
 export class NewComponent implements OnInit {
 
   public newTopicForm = new FormGroup({
-    title: new FormControl(''),
+    title: new FormControl('', [
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      Validators.required,
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      Validators.minLength(1)
+    ]),
     description: new FormControl(''),
     content: new FormControl(''),
     files: new FormControl([]),
@@ -46,11 +50,42 @@ export class NewComponent implements OnInit {
 
   public submitNewtopic(): void {
 
-    this.logger.info('Submitting a new topic...', this.newTopicForm.value, this.childTopics);
+    if (this.newTopicForm.valid) {
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      const payload = this.newTopicForm.value;
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      payload.children = this.childTopics;
+
+      this.API.createTopic(payload).subscribe(result => {
+
+        this.logger.error('Success creating a new topic.', result);
+      }, error => {
+
+        this.logger.error('Error creating a new topic.', error);
+      });
+    }
   }
 
   public setChildTopics(childTopics: string[]): void {
 
     this.childTopics = childTopics;
+  }
+
+  public error(fieldIdentifier: string): boolean {
+
+    const formField = this.newTopicForm.get(fieldIdentifier);
+    let condition = false;
+
+    switch (fieldIdentifier) {
+    case 'title':
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      condition = formField.errors && formField.errors.required;
+      break;
+    }
+
+    return condition && (formField.dirty || formField.touched);
   }
 }
