@@ -20,13 +20,45 @@ mongoose.connect(mongoConnectionUrl(Configuration.Mongo), {
   useUnifiedTopology: true,
 });
 
-async function getTopics(parameters ? : any) {
+async function getTopics({
+  keywords,
+  limit
+}: {
+  keywords: string,
+  limit: string
+}) {
 
-  const a = await TopicModel.find({}, {
-      title: 1
+  let condition = {};
+
+  if (keywords) {
+    const splittedKeywords = keywords.split(' ')
+      .map(s => s.trim())
+      .filter(s => s.length)
+
+    condition = {
+      $or: splittedKeywords.map(s => {
+        return {
+          title: {
+            $regex: `.*${s}.*`,
+            $options: '-i',
+          }
+        }
+      })
+    };
+  }
+
+  let query = await TopicModel.find(condition, {
+      title: 1,
+      _id: 1,
     })
     .exec();
-  return a;
+
+  if (limit) {
+
+    query = query.limit(limit);
+  }
+
+  return query;
 };
 
 export {

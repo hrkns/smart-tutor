@@ -49,9 +49,13 @@ export class MultipleSelectUsingSearchComponent implements OnInit {
 
     inputSearchText = inputSearchText.trim();
 
+    if (inputSearchText.length === 0) {
+      return;
+    }
+
     this.apiSource({
       keywords: inputSearchText,
-      limit: 1,
+      limit: 10,
     })
       .subscribe(result => {
 
