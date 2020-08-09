@@ -33,7 +33,10 @@
 
   <br><br>
 
-  <app-multiple-select-using-search [apiSource]="API.getTopics"></app-multiple-select-using-search>
+  <app-multiple-select-using-search
+    [apiSource]="API.getTopics"
+    (setChildTopics)="setChildTopics($event)"
+  ></app-multiple-select-using-search>
 
   <br><br>
 

@@ -1,7 +1,9 @@
 import {
   Component,
   OnInit,
-  Input
+  Input,
+  Output,
+  EventEmitter
 } from '@angular/core';
 import {
   Observable
@@ -26,6 +28,8 @@ import {
 export class MultipleSelectUsingSearchComponent implements OnInit {
 
   @Input() apiSource: (parameters ? : any) => Observable < any > ;
+
+  @Output() setChildTopics = new EventEmitter<string[]>();
 
   public inputForSearch = '';
   public topicsSearchResults: SimpleTopic[];
@@ -72,6 +76,8 @@ export class MultipleSelectUsingSearchComponent implements OnInit {
 
       this.search(this.inputForSearch);
     }
+
+    this.setChildTopics.emit(this.selectedTopicsFromSearchResults.map(s => s._id));
   }
 
   public indicateToSearchATopic(): boolean {
@@ -98,6 +104,7 @@ export class MultipleSelectUsingSearchComponent implements OnInit {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       (value: SimpleTopic) => value._id === topictoBeRemoved._id);
     this.topicsSearchResults.push(topictoBeRemoved);
+    this.setChildTopics.emit(this.selectedTopicsFromSearchResults.map(s => s._id));
   }
 
   public moveUp(indexOfElement: number): void {

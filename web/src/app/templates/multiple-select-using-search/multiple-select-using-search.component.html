@@ -34,5 +34,6 @@
       &nbsp;
       <span class='title-selected-topic'>{{ topic.title }}</span>
     </div>
+    <span class='no-selected-topics' *ngIf='selectedTopicsFromSearchResults.length === 0'>No selected topics.</span>
   </div>
 </div>

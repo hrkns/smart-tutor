@@ -29,8 +29,8 @@ export class NewComponent implements OnInit {
     description: new FormControl(''),
     content: new FormControl(''),
     files: new FormControl([]),
-    children: new FormControl([]),
   });
+  public childTopics: string[];
 
   public constructor(
     public API: ApiService,
@@ -39,12 +39,18 @@ export class NewComponent implements OnInit {
   ) {
 
     this.titleService.setTitle('Create Topic');
+    this.childTopics = [];
   }
 
   public ngOnInit(): void {}
 
   public submitNewtopic(): void {
 
-    this.logger.info('Submitting a new topic...', this.newTopicForm.value);
+    this.logger.info('Submitting a new topic...', this.newTopicForm.value, this.childTopics);
+  }
+
+  public setChildTopics(childTopics: string[]): void {
+
+    this.childTopics = childTopics;
   }
 }
