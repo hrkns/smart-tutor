@@ -1,0 +1,25 @@
+.new-topic-topics-search-result {
+  border: solid 1px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.new-topic-topics-search-result:hover {
+  background-color: gray;
+}
+
+.control-selected-topic {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.title-selected-topic {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.placeholder-text {
+  color: gray;
+}

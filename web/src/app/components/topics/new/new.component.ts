@@ -41,7 +41,7 @@ export class NewComponent implements OnInit {
     this.titleService.setTitle('Create Topic');
   }
 
-  public ngOnInit(): void { }
+  public ngOnInit(): void {}
 
   public submitNewtopic(): void {
 

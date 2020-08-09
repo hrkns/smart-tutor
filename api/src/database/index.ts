@@ -22,20 +22,26 @@ mongoose.connect(mongoConnectionUrl(Configuration.Mongo), {
 
 async function getTopics({
   keywords,
-  limit
+  limit,
+  exclude
 }: {
   keywords: string,
-  limit: string
+  limit: string,
+  exclude: string[],
 }) {
 
-  let condition = {};
+  let condition: {
+    $and ? : any[],
+  };
+
+  condition = {};
 
   if (keywords) {
     const splittedKeywords = keywords.split(' ')
       .map(s => s.trim())
       .filter(s => s.length)
 
-    condition = {
+    condition.$and = [{
       $or: splittedKeywords.map(s => {
         return {
           title: {
@@ -44,21 +50,36 @@ async function getTopics({
           }
         }
       })
-    };
+    }];
   }
 
-  let query = await TopicModel.find(condition, {
-      title: 1,
-      _id: 1,
-    })
-    .exec();
+  exclude = exclude ? (exclude.map(s => s.trim()).filter(s => s.length)) : [];
+
+  if (exclude && exclude.length) {
+
+    if (!condition.$and) {
+
+      condition.$and = [];
+    }
+
+    condition.$and.push({
+      _id : {
+        $nin : exclude
+      }
+    });
+  }
+
+  let query = TopicModel.find(condition, {
+    title: 1,
+    _id: 1,
+  });
 
   if (limit) {
 
-    query = query.limit(limit);
+    query = query.limit(Number(limit));
   }
 
-  return query;
+  return await query.exec();
 };
 
 export {

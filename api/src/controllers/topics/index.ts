@@ -7,9 +7,10 @@ async function getTopics(request: any, response: any) {
 
   try {
 
-    logger.info('Querying topics...', request.query);
-    response.json(await db.getTopics(request.query));
-    logger.success('Topics returned!');
+    logger.info('Querying topics...', 'Parameters:', request.query);
+    const result = db.getTopics(request.query);
+    response.json(await result);
+    logger.success('Topics returned!', result);
   } catch (e) {
 
     logger.error('Error querying topics.', e.message);

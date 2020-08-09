@@ -4,4 +4,35 @@
     <br>
     <input type='text' [(ngModel)]="inputForSearch" (ngModelChange)="dataChanged($event)">
   </label>
+
+  <br>
+  <br>
+
+  <!-- search results -->
+  <div>
+    <span *ngIf='indicateToSearchATopic()' class='placeholder-text'>Search for a topic!</span>
+    <span *ngIf='searchingTopics' class='placeholder-text'>Searching topics...</span>
+    <span *ngIf='noResultsFromSearch()' class='placeholder-text'>No results from search.</span>
+    <div *ngIf='!searchingTopics'>
+      <span class='new-topic-topics-search-result' *ngFor='let topic of topicsSearchResults' (click)="selectTopicFromSearchResults(topic)">
+        {{ topic.title }}
+      </span>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <!-- picked search results -->
+  <div>
+    <div class='selected-topic-from-search-results' *ngFor='let topic of selectedTopicsFromSearchResults; let i = index'>
+      <span class='control-selected-topic' (click)='removeTopicFromSelectedList(topic)'>X</span>
+      &nbsp;
+      <span class='control-selected-topic' (click)='moveUp(i)'>Up</span>
+      &nbsp;
+      <span class='control-selected-topic' (click)='moveDown(i)'>Down</span>
+      &nbsp;
+      <span class='title-selected-topic'>{{ topic.title }}</span>
+    </div>
+  </div>
 </div>

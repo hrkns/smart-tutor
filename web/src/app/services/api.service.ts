@@ -56,6 +56,11 @@ export class ApiService {
       queryString.push(`limit=${queryParameters.limit}`);
     }
 
+    if (queryParameters && queryParameters.exclude.length) {
+
+      queryString.push(`exclude=${queryParameters.exclude.map(s => s.trim()).filter(s => s.length).join(',')}`);
+    }
+
     return (queryString.length ? '?' : '') + queryString.join('&');
   }
 }
