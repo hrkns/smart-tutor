@@ -19,7 +19,6 @@ const {
     const {
       level,
       message,
-      label,
       timestamp
     } = parameters;
     return `${timestamp} ${level}: ${message}`;
@@ -38,15 +37,15 @@ const {
   },
   successLog = (...messages: any[]) => {
 
-    messages.forEach(message => winstonLogger.info(JSON.stringify(message)));
+    messages.forEach(message => winstonLogger.debug(JSON.stringify(message)));
   },
   warningLog = (...messages: any[]) => {
 
-    messages.forEach(message => winstonLogger.warning(JSON.stringify(message)));
+    messages.forEach(message => winstonLogger.debug(JSON.stringify(message)));
   },
   errorLog = (...messages: any[]) => {
 
-    messages.forEach(message => winstonLogger.error(JSON.stringify(message)));
+    messages.forEach(message => winstonLogger.debug(JSON.stringify(message)));
   };
 
 let _ = (level: string) => {

@@ -24,15 +24,18 @@ mongoose.connect(mongoConnectionUrl(Configuration.Mongo), {
  * @param{string} keywords list of strings separated by blank spaces that will serve for filtering the search results.
  * @param{string} limit the maximum amount of topics the query will return
  * @param{string[]} exclude an array of string that represents the IDs of the records that we don't want be ignored in the query
+ * @param{string[]} only an array of string that represents the IDs of the only record we want to get from the database
  */
 async function getTopics({
   keywords,
   limit,
-  exclude
+  exclude,
+  only,
 }: {
   keywords ? : string,
   limit ? : string,
   exclude ? : string[],
+  only ? : string[],
 }) {
 
   let condition: {
@@ -75,9 +78,27 @@ async function getTopics({
     });
   }
 
+  only = only ? (only.map(s => s.trim())
+    .filter(s => s.length)) : [];
+
+  if (only && only.length) {
+
+    if (!condition.$and) {
+
+      condition.$and = [];
+    }
+
+    condition.$and.push({
+      _id: {
+        $in: only
+      }
+    });
+  }
+
   let query = TopicModel.find(condition, {
-    title: 1,
     _id: 1,
+    title: 1,
+    description: 1,
   });
 
   if (limit) {
