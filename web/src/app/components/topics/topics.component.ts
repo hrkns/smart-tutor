@@ -1,18 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  Title
+} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-topics',
   templateUrl: './topics.component.html',
   styleUrls: ['./topics.component.scss']
 })
+
 export class TopicsComponent implements OnInit {
 
-  public constructor(private titleService: Title ) {
+  public constructor(private titleService: Title) {
 
-    this.titleService.setTitle( 'Topics' );
+    this.titleService.setTitle('Topics');
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

@@ -4,7 +4,9 @@
   <label>
     Title:
     <br>
-    <input type='text' formControlName="title">
+    <input id='title' type='text' formControlName="title" required>
+    &nbsp;
+    <span *ngIf="error('title')">Title required!</span>
   </label>
 
   <br><br>
@@ -31,8 +33,14 @@
     <input type='file' formControlName="files" multiple="true">
   </label>
 
-  <p>Child Topics:</p>
-  <!-- custom input (multiple combo?) for selecting child topics, allowing to ordering them-->
+  <br><br>
 
-  <input type='submit' value='Save'>
+  <app-multiple-select-using-search
+    [apiSource]="API.getTopics"
+    (setChildTopics)="setChildTopics($event)"
+  ></app-multiple-select-using-search>
+
+  <br><br>
+
+  <input type='submit' value='Save' [disabled]="!newTopicForm.valid || saving">
 </form>

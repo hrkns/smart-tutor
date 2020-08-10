@@ -6,14 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc && node ./dist/index.js",
-    "dev": "nodemon -e ts --exec \"npm run compile\""
+    "local": "nodemon -e ts --exec \"npm run compile\""
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.7",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-validator": "^6.6.1",
     "mongoose": "^5.9.28",
     "typescript": "^3.9.7",
     "winston": "^3.3.3"

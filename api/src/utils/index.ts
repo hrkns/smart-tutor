@@ -6,19 +6,22 @@ const mongoConnectionUrl = (databaseConfiguration: any) => {
 const apiUrlPrefix = '/';
 
 const EnviromentsIdentifiers = {
-  local : 'local',
-  development : 'dev',
-  test : 'test',
-  stage : 'stg',
-  production : 'prod',
+  local: 'local',
+  development: 'dev',
+  test: 'test',
+  stage: 'stg',
+  production: 'prod',
 }
 
 const LoggingLevels = {
-  info:'info', debug:'debug', warning:'warning', error:'error', success:'success'
+  info: 'info',
+  debug: 'debug',
+  warning: 'warning',
+  error: 'error',
+  success: 'success'
 };
 
 export {
-
   mongoConnectionUrl,
   apiUrlPrefix,
   EnviromentsIdentifiers,
