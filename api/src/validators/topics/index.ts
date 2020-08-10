@@ -2,6 +2,7 @@ const {
   query,
   validationResult,
   body,
+  // some aditional imports?
 } = require('express-validator');
 
 const getTopicsQueryParametersRules: any[] = [
@@ -90,6 +91,11 @@ const newTopicBodyFieldsRules: any[] = [
     .withMessage(`'children' body field, if provided, must have every string item as non empty.`),
 ];
 
+// rules for file validation
+// rules for query of single topic
+// rules for payload of topic update
+// rules for topic deletion
+
 const _ = (request: any, response: any, next: any) => {
 
   const errors = validationResult(request);
@@ -116,9 +122,21 @@ const _ = (request: any, response: any, next: any) => {
 const validateGetTopicsQueryParameters = _;
 const validateNewTopicBodyFields = _;
 
+// definition of the following items 
+  // filesValidationMiddleware
+  // singleTopicQueryValidation
+  // payloadTopicUpdateValidation
+  // topicDeletionValidation
+
 export {
   getTopicsQueryParametersRules,
   validateGetTopicsQueryParameters,
   newTopicBodyFieldsRules,
   validateNewTopicBodyFields,
+
+  // imports of the following items
+    // filesValidationMiddleware
+    // singleTopicQueryValidation
+    // payloadTopicUpdateValidation
+    // topicDeletionValidation
 }

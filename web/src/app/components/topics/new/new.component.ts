@@ -69,6 +69,9 @@ export class NewComponent implements OnInit {
       this.API.createTopic(payload).subscribe(result => {
 
         this.logger.success('Success creating a new topic.', result);
+
+        // then, upload the files
+
         this.saving = false;
       }, error => {
 

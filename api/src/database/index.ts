@@ -136,6 +136,12 @@ async function createTopic({
     });
 }
 
+// mongoose method for update topic
+
+// mongoose method for get single topic
+
+// mongoose method for delete topic
+
 export {
   getTopics,
   createTopic,

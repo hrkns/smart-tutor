@@ -48,6 +48,11 @@ async function createTopic(request: any, response: any) {
   }
 };
 
+// controller for upload files to free cloud storage
+// controller for get single topic
+// controller for topic update
+// controller for topic deletion
+
 export {
   getTopics,
   createTopic,
