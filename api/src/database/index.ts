@@ -20,6 +20,11 @@ mongoose.connect(mongoConnectionUrl(Configuration.Mongo), {
   useUnifiedTopology: true,
 });
 
+/**@description Get a list of topics from the Mongo Database.
+ * @param{string} keywords list of strings separated by blank spaces that will serve for filtering the search results.
+ * @param{string} limit the maximum amount of topics the query will return
+ * @param{string[]} exclude an array of string that represents the IDs of the records that we don't want be ignored in the query
+ */
 async function getTopics({
   keywords,
   limit,
@@ -83,6 +88,12 @@ async function getTopics({
   return await query.exec();
 };
 
+/**@description Insert a new document in the 'topics' collection
+ * @param{string} title Name of the topic
+ * @param{string} description A brief summary of the topic
+ * @param{string} content Extensive information of the topic
+ * @param{string[]} children An ordered list of the child topics, referenced by their IDs
+*/
 async function createTopic({
   title,
   description,
