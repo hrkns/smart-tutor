@@ -65,3 +65,142 @@ npm WARN @ngtools/webpack@9.1.12 requires a peer of typescript@>=3.6 < 3.9 but n
 added 1754 packages from 1212 contributors and audited 1760 packages in 529.307s
 found 2 low severity vulnerabilities
   run `npm audit fix` to fix them, or `npm audit` for details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "src/app/utils/index.ngtypecheck.ts",
+    "src/main.ngtypecheck.ts",
+    "src/app/app-routing.module.ngtypecheck.ts",
+    "src/app/components/topics/routes.ngtypecheck.ts",
+    "src/app/components/topics/topics.component.ngtypecheck.ts",
+    "src/app/components/topics/new/new.component.ngtypecheck.ts",
+    "src/app/services/index.ngtypecheck.ts",
+    "src/app/services/api.service.ngtypecheck.ts",
+    "src/environments/environment.ngtypecheck.ts",
+    "src/app/app.module.ngtypecheck.ts",
+    "src/app/utils/api.utils.ngtypecheck.ts",
+    "src/app/utils/environments.utils.ngtypecheck.ts",
+    "src/app/utils/methods.utils.ngtypecheck.ts",
+    "src/app/types/index.ngtypecheck.ts",
+    "src/app/services/logger.service.ngtypecheck.ts",
+    "src/app/components/app.component.ngtypecheck.ts",
+    "src/app/directives/file-value-accesor.directive.ngtypecheck.ts",
+    "src/app/templates/multiple-select-using-search/multiple-select-using-search.component.ngtypecheck.ts",
+    "src/polyfills.ngtypecheck.ts"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:\workspace\smart-tutor\web>npm run local:app
+
+> web@0.0.0 local:app C:\workspace\smart-tutor\web
+> npm run local:lint & ng serve --aot=true --configuration=local --liveReload=true --open=true --port=4200 --watch=true
+
+
+> web@0.0.0 local:lint C:\workspace\smart-tutor\web
+> ng lint
+
+Linting "web"...
+All files pass linting.
+
+chunk {main} main.js, main.js.map (main) 70.7 kB [initial] [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 141 kB [initial] [rendered]
+chunk {quill} quill.js, quill.js.map (quill) 430 kB  [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 8.98 kB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 149 kB [initial] [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 3.12 MB [initial] [rendered]
+Date: 2020-08-10T19:29:32.515Z - Hash: d66608a175d563a51f0a - Time: 9577ms
+
+WARNING in C:\workspace\smart-tutor\web\src\app\utils\index.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\main.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\app-routing.module.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\components\topics\routes.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\components\topics\topics.component.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\components\topics\new\new.component.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\services\index.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\services\api.service.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\environments\environment.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\app.module.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\utils\api.utils.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\utils\environments.utils.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\utils\methods.utils.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\types\index.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\services\logger.service.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\components\app.component.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\directives\file-value-accesor.directive.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\app\templates\multiple-select-using-search\multiple-select-using-search.component.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+
+WARNING in C:\workspace\smart-tutor\web\src\polyfills.ngtypecheck.ts is part of the TypeScript compilation but it's unused.
+Add only entry points to the 'files' or 'include' properties in your tsconfig.
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+: Compiled successfully.

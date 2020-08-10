@@ -36,12 +36,12 @@ export class ApiService {
     private logger: LoggerService
   ) {}
 
-  public getTopics = (queryParameters ? : SearchQueryParameters): Observable < any > => {
+  public getTopics = (queryParameters?: SearchQueryParameters): Observable < any > => {
 
     const url = `${this.apiUrl}${endpoints.getTopics}${this.buildQueryStringFromSearchQueryParameters(queryParameters)}`;
     this.logger.info('Getting topics...', 'HTTP request.', url);
     return this.http.get(url);
-  };
+  }
 
   public createTopic = (payload: TopicCreationPayload): Observable < any > => {
 
@@ -52,9 +52,9 @@ export class ApiService {
     const url = `${this.apiUrl}${endpoints.createTopic}`;
     this.logger.info('Creating topic...', 'HTTP request.', url, payload);
     return this.http.post(url, payload);
-  };
+  }
 
-  private buildQueryStringFromSearchQueryParameters(queryParameters ? : SearchQueryParameters): string {
+  private buildQueryStringFromSearchQueryParameters(queryParameters?: SearchQueryParameters): string {
     const queryString = new Array < string > ();
 
     if (queryParameters && queryParameters.keywords && queryParameters.keywords.trim()

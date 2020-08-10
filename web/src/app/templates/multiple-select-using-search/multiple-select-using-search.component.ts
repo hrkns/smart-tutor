@@ -27,7 +27,7 @@ import {
 
 export class MultipleSelectUsingSearchComponent implements OnInit {
 
-  @Input() apiSource: (parameters ? : any) => Observable < any > ;
+  @Input() apiSource: (parameters?: any) => Observable < any > ;
 
   @Output() setChildTopics = new EventEmitter < string[] > ();
 
