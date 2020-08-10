@@ -11,7 +11,9 @@ import {
   Environment
 } from 'src/environments/environment';
 import {
-  endpoints
+  endpoints,
+  RemoveStringFromObjectIfItIsEmpty,
+  RemoveArrayOfStringsFromObjectIfItIsEmpty,
 } from 'src/app/utils';
 import {
   SearchQueryParameters,
@@ -19,7 +21,7 @@ import {
 } from 'src/app/types';
 import {
   LoggerService
-} from 'src/app/services';
+} from 'src/app/services/logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +45,9 @@ export class ApiService {
 
   public createTopic = (payload: TopicCreationPayload): Observable < any > => {
 
-    console.log('endpoints', endpoints);
+    RemoveStringFromObjectIfItIsEmpty(payload, 'description');
+    RemoveStringFromObjectIfItIsEmpty(payload, 'content');
+    RemoveArrayOfStringsFromObjectIfItIsEmpty(payload, 'children');
 
     const url = `${this.apiUrl}${endpoints.createTopic}`;
     this.logger.info('Creating topic...', 'HTTP request.', url, payload);

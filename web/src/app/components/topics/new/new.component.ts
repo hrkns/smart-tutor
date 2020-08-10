@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {
   Component,
   OnInit
@@ -35,6 +37,7 @@ export class NewComponent implements OnInit {
     files: new FormControl([]),
   });
   public childTopics: string[];
+  public saving = false;
 
   public constructor(
     public API: ApiService,
@@ -54,16 +57,23 @@ export class NewComponent implements OnInit {
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const payload = this.newTopicForm.value;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const files = this.newTopicForm.value.files;
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       payload.children = this.childTopics;
 
+      delete payload.files;
+      this.saving = true;
+
       this.API.createTopic(payload).subscribe(result => {
 
-        this.logger.error('Success creating a new topic.', result);
+        this.logger.success('Success creating a new topic.', result);
+        this.saving = false;
       }, error => {
 
         this.logger.error('Error creating a new topic.', error);
+        this.saving = false;
       });
     }
   }

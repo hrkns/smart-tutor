@@ -25,9 +25,9 @@ async function getTopics({
   limit,
   exclude
 }: {
-  keywords: string,
-  limit: string,
-  exclude: string[],
+  keywords ? : string,
+  limit ? : string,
+  exclude ? : string[],
 }) {
 
   let condition: {
@@ -53,7 +53,8 @@ async function getTopics({
     }];
   }
 
-  exclude = exclude ? (exclude.map(s => s.trim()).filter(s => s.length)) : [];
+  exclude = exclude ? (exclude.map(s => s.trim())
+    .filter(s => s.length)) : [];
 
   if (exclude && exclude.length) {
 
@@ -63,8 +64,8 @@ async function getTopics({
     }
 
     condition.$and.push({
-      _id : {
-        $nin : exclude
+      _id: {
+        $nin: exclude
       }
     });
   }
@@ -82,6 +83,28 @@ async function getTopics({
   return await query.exec();
 };
 
+async function createTopic({
+  title,
+  description,
+  content,
+  children,
+}: {
+  title: string,
+  description ? : string,
+  content ? : string,
+  children ? : string[],
+}) {
+
+  return await TopicModel.create({
+      title: title,
+      description: (description && description.trim() ? description.trim() : ''),
+      content: (content && content.trim()
+        .length ? content.trim() : ''),
+      children: (children && children.length ? children : []),
+    });
+}
+
 export {
-  getTopics
+  getTopics,
+  createTopic,
 };

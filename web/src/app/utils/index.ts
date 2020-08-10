@@ -6,12 +6,16 @@ import {
 } from './environments.utils';
 import {
   RemoveElementFromArray,
-  MoveElementFromIndexFromArrayToPosition
+  MoveElementFromIndexFromArrayToPosition,
+  RemoveStringFromObjectIfItIsEmpty,
+  RemoveArrayOfStringsFromObjectIfItIsEmpty,
 } from './methods.utils';
 
 export {
   endpoints,
   ENVIRONMENTS,
   RemoveElementFromArray,
-  MoveElementFromIndexFromArrayToPosition
+  MoveElementFromIndexFromArrayToPosition,
+  RemoveStringFromObjectIfItIsEmpty,
+  RemoveArrayOfStringsFromObjectIfItIsEmpty,
 };

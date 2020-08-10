@@ -1,6 +1,7 @@
 const {
   query,
-  validationResult
+  validationResult,
+  body,
 } = require('express-validator');
 
 const getTopicsQueryParametersRules: any[] = [
@@ -20,6 +21,35 @@ const getTopicsQueryParametersRules: any[] = [
     .optional()
     .isString()
     .trim()
+    .isLength({
+      min: 1
+    }),
+];
+
+const newTopicBodyFieldsRules: any[] = [
+  body('title')
+    .isString()
+    .trim()
+    .isLength({
+      min: 1
+    }),
+  body('description')
+    .optional()
+    .isString()
+    .trim()
+    .isLength({
+      min: 1
+    }),
+  body('content')
+    .optional()
+    .isString()
+    .trim()
+    .isLength({
+      min: 1
+    }),
+  body('children')
+    .optional()
+    .isArray()
     .isLength({
       min: 1
     }),
@@ -49,8 +79,11 @@ const _ = (request: any, response: any, next: any) => {
 };
 
 const validateGetTopicsQueryParameters = _;
+const validateNewTopicBodyFields = _;
 
 export {
   getTopicsQueryParametersRules,
-  validateGetTopicsQueryParameters
+  validateGetTopicsQueryParameters,
+  newTopicBodyFieldsRules,
+  validateNewTopicBodyFields,
 }

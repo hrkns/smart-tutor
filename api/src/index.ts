@@ -1,4 +1,5 @@
 import express = require('express');
+import bodyParser = require('body-parser')
 import {
   HostConfiguration
 } from './configuration';
@@ -10,6 +11,8 @@ import {
 const cors = require('cors');
 const app: express.Application = express();
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use(cors());
 SetRoutes(app);
 
