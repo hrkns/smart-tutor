@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "tsc && node ./dist/index.js",
-    "local": "nodemon -e ts --exec \"npm run compile\""
+    "local:depcheck": "depcheck --skip-missing=true",
+    "local:compile": "tsc && node ./dist/index.js",
+    "local:app": "nodemon -e ts --exec \"npm run local:compile\""
   },
   "author": "",
   "license": "ISC",
