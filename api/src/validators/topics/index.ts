@@ -1,3 +1,5 @@
+import * as db from '../../database';
+const mongoose = require('mongoose');
 const {
   query,
   validationResult,
@@ -88,7 +90,35 @@ const newTopicBodyFieldsRules: any[] = [
     .isLength({
       min: 1
     })
-    .withMessage(`'children' body field, if provided, must have every string item as non empty.`),
+    .withMessage(`'children' body field, if provided, must have every string item as non empty.`)
+    .custom((value: string) => {
+
+      try {
+
+        mongoose.Types.ObjectId(value);
+        return Promise.resolve();
+      } catch (e) {
+
+        return Promise.reject(`"${value}" is not a valid ID.`);
+      }
+    }),
+
+  /* ******************** */
+  body('children')
+    .optional()
+    .custom(async (values: Array<string>) => {
+      const existing = await db.getTopics({
+        only: values,
+      });
+
+      if (existing.length !== values.length) {
+
+        return Promise.reject(`Some of the provided child topics are unknown. The only ones existing in the database are [${existing.map((v:any) => v._id).join(', ')}].`);
+      } else {
+
+        return Promise.resolve();
+      }
+    })
 ];
 
 // rules for file validation
